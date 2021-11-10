@@ -90,3 +90,5 @@ I'm using <https://github.com/glepnir/dashboard-nvim> for a pretty sweet dashboa
 I'm using Dracula for now!
 
 <https://github.com/dracula/vim>
+
+<!-- todo   https://pragmaticpineapple.com/ultimate-vim-typescript-setup/   setup https://github.com/neoclide/coc.nvim#example-vim-configuration  -->
