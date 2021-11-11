@@ -4,9 +4,8 @@
 "| (_| |  __/  _| (_| | |_| | | |_\__ \
 " \__,_|\___|_|  \__,_|\__,_|_|\__|___/
 " -----------------------------------
-" These are the set of "sane defaults" that people on the internet have agreed
-" upon.
-
+"
+"
 set scrolloff=8
 set number
 set relativenumber
@@ -28,6 +27,7 @@ set smartindent
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'BurntSushi/ripgrep'
 Plug 'neovim/nvim-lspconfig'
@@ -93,6 +93,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+
+nnoremap <leader>r :!/usr/local/bin/node %<CR>
 nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
 nnoremap <C-E> :copen<CR>
