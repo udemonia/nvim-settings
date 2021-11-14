@@ -31,6 +31,8 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'BurntSushi/ripgrep'
 Plug 'neovim/nvim-lspconfig'
+Plug 'tpope/vim-surround'
+Plug 'windwp/nvim-autopairs'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'ayu-theme/ayu-vim'
@@ -38,6 +40,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'dracula/vim'
 Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
@@ -74,6 +77,12 @@ let g:dashboard_custom_header = [
 
 let g:dashboard_default_executive ='telescope'
 
+" Automatically closing braces
+inoremap {<CR> {<CR>}<Esc>ko<tab>
+inoremap [<CR> [<CR>]<Esc>ko<tab>
+inoremap (<CR> (<CR>)<Esc>ko<tab>
+
+
 "Transparent Background
 hi Normal guibg=NONE ctermbg=NONE
 set termguicolors     " enable true colors support
@@ -82,6 +91,10 @@ colorscheme dracula
 let g:coc_global_extensions = ['coc-tsserver']
 let mapleader = " "
 nnoremap <leader>pv :Vex<CR>
+
+
+nnoremap <leader>w <C-w>s<CR>
+nnoremap <leader>q :q<CR>
 
 
 " Remap keys for applying codeAction to the current line.
@@ -96,6 +109,7 @@ nmap <silent> gr <Plug>(coc-references)
 " Nerdtree
 nnoremap <leader>n :NERDTreeFocus<CR>
 
+nnoremap <leader>w :w<CR>
 nnoremap <leader>r :!/usr/local/bin/node %<CR>
 nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
