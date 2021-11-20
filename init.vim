@@ -14,6 +14,8 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+let g:dracula_colorterm = 0
+
 "        _             _
 "  _ __ | |_   _  __ _(_)_ __  ___
 " | '_ \| | | | |/ _` | | '_ \/ __|
@@ -24,16 +26,19 @@ set smartindent
 " All the "cool kids" are using these.
 "
 
-
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'BurntSushi/ripgrep'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'karb94/neoscroll.nvim'
 Plug 'tpope/vim-surround'
 Plug 'windwp/nvim-autopairs'
 Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'ayu-theme/ayu-vim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -62,6 +67,7 @@ call plug#end()
 
 
 lua << EOF
+require('gitsigns').setup()
 require('lualine').setup()
 EOF
 
@@ -78,9 +84,9 @@ let g:dashboard_custom_header = [
 let g:dashboard_default_executive ='telescope'
 
 " Automatically closing braces
-inoremap {<CR> {<CR>}<Esc>ko<tab>
-inoremap [<CR> [<CR>]<Esc>ko<tab>
-inoremap (<CR> (<CR>)<Esc>ko<tab>
+"inoremap {<CR> {<CR>}<Esc>ko<tab>
+"inoremap [<CR> [<CR>]<Esc>ko<tab>
+"inoremap (<CR> (<CR>)<Esc>ko<tab>
 
 
 "Transparent Background
