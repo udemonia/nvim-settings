@@ -1,4 +1,3 @@
-"     _       __             _ _
 "  __| | ___ / _| __ _ _   _| | |_ ___
 " / _` |/ _ \ |_ / _` | | | | | __/ __|
 "| (_| |  __/  _| (_| | |_| | | |_\__ \
@@ -32,7 +31,12 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'BurntSushi/ripgrep'
 Plug 'neovim/nvim-lspconfig'
+Plug 'sudormrfbin/cheatsheet.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'vimwiki/vimwiki'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'tpope/vim-surround'
@@ -133,4 +137,7 @@ nnoremap <leader>gb <cmd>Telescope git_branches<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fb <cmd>Telescope help_tags<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
+nnoremap <leader>c :Cheatsheet<CR>
